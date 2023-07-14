@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("A")
-
 @Getter
 @Setter
 
