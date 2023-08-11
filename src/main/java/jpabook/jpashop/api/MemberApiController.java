@@ -39,7 +39,7 @@ public class MemberApiController {
         memberService.update(id, requeest.getName());
         Member findMember = memberService.findOne(id);
 
-        return new UpdateMemberResponse(findMember.getId(), findMember.getName())
+        return new UpdateMemberResponse(findMember.getId(), findMember.getName());
     }
     @Data
     static class CreateMemberRequest {
@@ -57,9 +57,6 @@ public class MemberApiController {
     @Data
     static class UpdateMemberRequest {
         private String name;
-
-        memberSerivce.update(id,request.getName())
-
     }
 
     @Data
