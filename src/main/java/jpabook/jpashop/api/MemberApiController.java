@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -41,6 +43,14 @@ public class MemberApiController {
 
         return new UpdateMemberResponse(findMember.getId(), findMember.getName());
     }
+
+    @GetMapping("api/v1/members")
+    public List<Member> membersV1() {
+        return memberService.findMembers();
+    }
+
+
+
     @Data
     static class CreateMemberRequest {
         private String name;
