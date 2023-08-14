@@ -14,7 +14,11 @@ public class JpashopApplication {
 
 	@Bean
 	Hibernate5Module hibernate5Module() {
-		hibernate5Module().configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING, true);
+//		hibernate5Module().configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING, true);
+		/**
+		 * 기본 설정
+		 * lazy 로딩을 호출해서 정상적으로 프록시가 초기화 된 애들만 API로 반환이 된다
+		 */
 		return new Hibernate5Module();
 	}
 
